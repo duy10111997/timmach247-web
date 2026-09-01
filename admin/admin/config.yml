@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: duy10111997/timmach247-web
+  branch: main
+
+# Đường dẫn lưu trữ hình ảnh tải lên bài viết
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "posts"
+    label: "Ca Lâm Sàng & Bài Viết"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Tiêu đề bài viết", name: "title", widget: "string" }
+      - { label: "Chuyên mục", name: "category", widget: "select", options: ["Cấp cứu mạch vành", "Holter Huyết Áp", "Suy tim", "Y học thường thức", "Lý thuyết"] }
+      - { label: "Tóm tắt ngắn (Hiện ở trang chủ)", name: "summary", widget: "text" }
+      - { label: "Ngày đăng", name: "date", widget: "datetime" }
+      - { label: "Nội dung chi tiết bài viết", name: "body", widget: "markdown" }
